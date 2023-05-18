@@ -1,0 +1,105 @@
+const { validationResult } = require("express-validator");
+const User = require("../models/user");
+var jwt = require("jsonwebtoken");
+const { expressjwt: expressJwt } = require("express-jwt");
+
+exports.signup = (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({
+      error: errors.array()[0].msg,
+      param: errors.array()[0].param,
+    });
+  }
+  const user = new User(req.body);
+  user.save((err, user) => {
+    if (err) {
+      console.log(err.message);
+      return res.status(400).json({
+        err: "Not able to save user in database",
+      });
+    }
+    //if we put -- res.json(user) -- it will give all data about user, but here we are fetching only 3 data about user.
+    res.json({
+      name: user.name,
+      email: user.email,
+      _id: user._id,
+    });
+  });
+};
+
+exports.signin = (req, res) => {
+  const errors = validationResult(req);
+  const user = new User(req.body);
+  const { email, encry_password } = req.body;
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({
+      error: errors.array()[0].msg,
+      param: errors.array()[0].param,
+    });
+  }
+
+  User.findOne({ email }, (err, user) => {
+    if (err || !user) {
+      // console.log(user);
+      return res.status(400).json({
+        error: "User email does not exists",
+      });
+    }
+    //console.log(user.authenticate(encry_password))
+    if (!user.authenticate(encry_password)) {
+      //console.log(err?.message);
+      return res.status(401).json({
+        error: "Email and password do not match",
+      });
+    }
+    const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+    //put token in cookie
+    res.cookie("token", token, { expire: new Date() + 9999 });
+    //send response to front end
+    const { _id, name, email, role } = user;
+    return res.json({ token, user: { _id, name, email, role } });
+  });
+};
+//to send json messages
+exports.signout = (req, res) => {
+  res.clearCookie("token");
+  res.json({
+    message: "user signout successfully",
+  });
+};
+
+// or this
+//const signout = (req,res)=> {
+//     res.send("user signout")
+// };
+
+//protected routes
+
+exports.isSignedIn = expressJwt({
+  secret: process.env.SECRET,
+  userProperty: "auth",
+  algorithms: ["HS256"],
+});
+
+//custom middlewares
+
+exports.isAuthenticated = (req, res, next) => {
+  let checker = req.profile && req.auth && req.profile.id === req.auth._id;
+  if (!checker) {
+    return res.status(403).json({
+      error: "access denied",
+    });
+  }
+  next();
+};
+
+exports.isAdmin = (req, res, next) => {
+  if (req.profile.role === 0) {
+    return res.status(403).json({
+      error: "you are not an admin",
+    });
+  }
+  next();
+};
