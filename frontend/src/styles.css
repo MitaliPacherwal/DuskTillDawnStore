@@ -1,0 +1,28 @@
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+
+body {
+  background: #b1c8cf;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  padding-right: 6;
+  padding-left: 7;
+  margin-right: auto;
+  margin-left: auto; 
+
+}
