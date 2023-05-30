@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "657ca730-3d1d-47c8-b124-255cde22ac81",
+		"name": "tshirt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27259047",
+		"_collection_link": "https://cloudy-star-729996.postman.co/workspace/Team-Workspace~24119d7e-c338-4e3c-8c80-615e3de9d589/collection/27259047-657ca730-3d1d-47c8-b124-255cde22ac81?action=share&creator=27259047&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hensi\",\r\n    \"lastname\" : \"rao\",\r\n    \"email\":\"raa@gmail.com\",\r\n    \"encry_password\":\"6645\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jain@gmail.com\",\r\n    \"encry_password\":\"12345678\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM1NDc1MDF9.nc4GNAfqSz6LWol9EHcGS8DuLaopcFGcFOEOwe2rhRI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/user/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM1NDk2NTN9.ku-G6oNLCnQ3YPZ8o72aCOQ7Yc7hcVsOgye6_lCP9wY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"sakshe\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createcategory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM2NTYwNjN9.Z89x-gv9p4T7QoBmGtOgVe_qpRUWieT9RC_KY2kbflk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Spring\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/category/create/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"create",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatecategory",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM3ODA3MjN9.eVbwUD3dp9HeZtnuUPiMNA9pdeQ_QlwwmtB3OV_LSnk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Winter\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/category/645b35a3fd053e5d2c8c05c9/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"645b35a3fd053e5d2c8c05c9",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletecategory",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM2OTk1ODZ9.DoSlxX6kN3Qo3T45cnyonJzQ6jC5xyzUVPiPKYNcy44",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/category/645b3684fd053e5d2c8c05d1/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"645b3684fd053e5d2c8c05d1",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWM0MmFlNTUyMTM0ZDhiNDkwODYiLCJpYXQiOjE2ODM3MDkwNzF9.dg0TEwoNd8SGylDvGp-RJY9j4WpVbh0GsUBONUcQwhE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Blue Crop Top",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fabric is soft",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "645b3596fd053e5d2c8c05c6",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/MitaliPacherwal/Downloads/New folder/images.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/product/create/6454ac42ae552134d8b49086",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"create",
+						"6454ac42ae552134d8b49086"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Blue Crop Top",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fabric is soft",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "645b3596fd053e5d2c8c05c6",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/MitaliPacherwal/Downloads/New folder/images.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/product/645b5ea0a82e8a2db8a19e21/6454ac0ea0d6643bd0e2876f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"645b5ea0a82e8a2db8a19e21",
+						"6454ac0ea0d6643bd0e2876f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCategories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YTkwMDcxZmQ5ZDIwNGMzMmU0NjgiLCJpYXQiOjE2ODM3MDAxMTV9.UNELBvxr3Q44n1G7-rcVve_ai5E5t8zV3JY8e6j0tS8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCategories Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YTkwMDcxZmQ5ZDIwNGMzMmU0NjgiLCJpYXQiOjE2ODM3MDAxMTV9.UNELBvxr3Q44n1G7-rcVve_ai5E5t8zV3JY8e6j0tS8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU0YWMwZWEwZDY2NDNiZDBlMjg3NmYiLCJpYXQiOjE2ODQ0MDk0OTV9.u7tgJ-BxBup9GXowHV1GY9-FaCmpfmW7HVPUEfFkFtI",
+			"type": "string"
+		}
+	]
+}
