@@ -37,7 +37,7 @@ const { user, token } = isAutheticated();
 
   return (
     <Base title="Welcome admin" description="Manage all the categories here">
-      <h2 className="mb-4">All Categories:</h2>
+      <h2 className="mb-4 text-dark">All Categories:</h2>
       <Link className="btn btn-info" to={`/admin/dashboard`}>
         <span className="">Back</span>
       </Link>
@@ -47,7 +47,7 @@ const { user, token } = isAutheticated();
             return (
               <div key={index} className="row text-center mb-2 ">
                 <div className="col-4">
-                  <h3 className="text-white text-left">{cate.name}</h3>
+                  <h3 className="text-dark text-left">{cate.name}</h3>
                 </div>
                 <div className="col-4">
               <Link

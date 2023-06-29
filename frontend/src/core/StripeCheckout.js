@@ -1,63 +1,80 @@
-// import React, { useState} from "react";
-// import { isAutheticated } from "../auth/helper";
-// import { cartEmpty, loadCart } from "./helper/cartHelper";
-// import { Link } from "react-router-dom";
-// import StripeCheckoutButton from "react-stripe-checkout";
-// import { API } from "../backend";
-// import {createOrder} from "./helper/orderHelper"
+import React, { useState} from "react";
+import { isAutheticated } from "../auth/helper";
+import { cartEmpty, loadCart } from "./helper/cartHelper";
+import { Link } from "react-router-dom";
+import StripeCheckoutButton from "react-stripe-checkout";
+import { API } from "../backend";
+import {createOrder} from "./helper/orderHelper"
 
-// const StripeCheckout = ({
-//   products,
-//   setReload = f => f,
-//   reload = undefined
-// }) => {
-//   const [data, setData] = useState({
-//     loading: false,
-//     success: false,
-//     error: "",
-//     address: ""
-//   });
+const StripeCheckout = ({
+  products,
+  setReload = f => f,
+  reload = undefined
+}) => {
+  const [data, setData] = useState({
+    loading: false,
+    success: false,
+    error: "",
+    address: ""
+  });
 
-//   const token = isAutheticated() && isAutheticated().token;
-//   const userId = isAutheticated() && isAutheticated().user._id;
+  const token = isAutheticated() && isAutheticated().token;
+  const userId = isAutheticated() && isAutheticated().user._id;
 
-//   const getFinalAmount = () => {
-//     let amount = 0;
-//     products.map(p => {
-//       amount = amount + p.price;
-//     });
-//     return amount;
-//   };
+  const getFinalAmount = () => {
+    let amount = 0;
+    products.map(p => {
+      amount = amount + p.price;
+    });
+    return amount;
+  };
 
-//   const makePayment = token => {
-//     //
-//   };
+  const makePayment = token => {
+    const body = {
+      token,
+      products,
+    }
+    const headers  = {
+      "Content-Type": "application/json"
+    }
+    return fetch(`${API}/stripepayment`, {
+      method:"PST",
+      headers,
+      body: JSON.stringify(body)
+    }).then(response =>{
+      console.log(response)
+      const {status} = response;
+      console.log("STATUS", status);
+      cartEmpty();
 
-//   const showStripeButton = () => {
-//     return isAutheticated() ? (
-//       <StripeCheckoutButton
-//         stripeKey=""
-//         token={makePayment}
-//         amount={getFinalAmount() * 100}
-//         name="Buy Tshirts"
-//         shippingAddress
-//         billingAddress
-//       >
-//         <button className="btn btn-success">Pay with stripe</button>
-//       </StripeCheckoutButton>
-//     ) : (
-//       <Link to="/signin">
-//         <button className="btn btn-warning">Signin</button>
-//       </Link>
-//     );
-//   };
+    }).catch(error => console.log(error))
+  };
 
-//   return (
-//     <div>
-//       <h3 className="text-white">Stripe Checkout {getFinalAmount()}</h3>
-//       {showStripeButton()}
-//     </div>
-//   );
-// };
+  const showStripeButton = () => {
+    return isAutheticated() ? (
+      <StripeCheckoutButton
+        stripeKey="pk_test_51NNULqSHdx1DRs8cvyYo1YO4eC1YKIh3Eom1u1izgFBBFGui328kP9G6vikA3C1Rc3JHnB1ccoQYEtcLnxHuyHFI008nFxnA6G"
+        token={makePayment}
+        amount={getFinalAmount() * 100}
+        name="Buy Tshirts"
+        shippingAddress
+        billingAddress
+      >
+        <button className="btn btn-success">Pay with stripe</button>
+      </StripeCheckoutButton>
+    ) : (
+      <Link to="/signin">
+        <button className="btn btn-warning">Signin</button>
+      </Link>
+    );
+  };
 
-// export default StripeCheckout;
+  return (
+    <div>
+      <h3 className="text-white">Stripe Checkout {getFinalAmount()}</h3>
+      {showStripeButton()}
+    </div>
+  );
+};
+
+export default StripeCheckout;

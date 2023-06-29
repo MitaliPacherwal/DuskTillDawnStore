@@ -63,13 +63,13 @@ console.log(values);
     });
   };
 
-  const preloadCategories = (dataToSet) => {
+  const preloadCategories = (dataToSend) => {
     getCategories().then(data => {
       if (data !== undefined && data.error !== undefined) {
         setValues({ ...values, error: data.error });
       } else {
         setValues({ 
-          ...dataToSet,
+          ...dataToSend,
           categories: data,
           formData: new FormData()
         });

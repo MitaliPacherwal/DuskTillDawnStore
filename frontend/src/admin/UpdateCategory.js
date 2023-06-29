@@ -8,7 +8,7 @@ import {
 } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
 
-const UpdateProduct = ({ match }) => {
+const UpdateCategory = ({ match }) => {
   const { user, token } = isAutheticated();
 
   const [values, setValues] = useState({
@@ -30,8 +30,7 @@ const UpdateProduct = ({ match }) => {
       if (data !== undefined && data.error !== undefined) {
         setValues({ ...values, error: data.error });
       } else {
-        preloadCategories();
-        setValues({
+        preloadCategories(   {
           ...values,
           name: data && data.name ? data.name : '',
           formData: new FormData()
@@ -54,7 +53,7 @@ const UpdateProduct = ({ match }) => {
   };
 
   useEffect(() => {
-    preload(match.params.productId);
+    preload(match.params.categoryId);
   }, []);
 
   //TODO: work on it
@@ -106,7 +105,7 @@ const UpdateProduct = ({ match }) => {
       <button
         type="submit"
         onClick={onSubmit}
-        className="btn btn-outline-success mb-3"
+        className="btn btn-outline-dark mb-3"
       >
          Update Category
       </button>
@@ -122,7 +121,7 @@ const UpdateProduct = ({ match }) => {
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
         Back
       </Link>
-      <div className="row bg-dark text-white rounded">
+      <div className="row bg-primary text-white rounded">
         <div className="col-md-8 offset-md-2">
           {successMessage()}
           {createCategoryForm()}
@@ -132,4 +131,4 @@ const UpdateProduct = ({ match }) => {
   );
 };
 
-export default UpdateProduct;
+export default UpdateCategory;
