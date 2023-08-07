@@ -1,0 +1,177 @@
+[{
+  "_id": {
+    "$oid": "6454a90071fd9d204c32e468"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "mini",
+  "lastname": "Pacherwal",
+  "email": "mini@gmail.com",
+  "encry_password": "5678",
+  "createdAt": {
+    "$date": "2023-05-05T06:58:08.685Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-05T06:58:08.685Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6454ac0ea0d6643bd0e2876f"
+  },
+  "role": 1,
+  "purchase": [],
+  "name": "Mitali Pacherwal",
+  "lastname": "Pacherwal",
+  "email": "mitali@gmail.com",
+  "encry_password": "1234",
+  "createdAt": {
+    "$date": "2023-05-05T07:11:10.734Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-05T07:11:10.734Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6454ac42ae552134d8b49086"
+  },
+  "role": 1,
+  "purchase": [],
+  "name": "sakshe",
+  "lastname": "jain",
+  "email": "jain@gmail.com",
+  "encry_password": "12345678",
+  "createdAt": {
+    "$date": "2023-05-05T07:12:02.715Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-08T12:43:10.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6454adc9ae9be35214559038"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "neema",
+  "lastname": "singh",
+  "email": "neema@gmail.com",
+  "encry_password": "123378",
+  "createdAt": {
+    "$date": "2023-05-05T07:18:33.968Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-05T07:18:33.968Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6454adffb564076a60df2fdc"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "rita",
+  "lastname": "singh",
+  "email": "rita@gmail.com",
+  "encry_password": "hello",
+  "createdAt": {
+    "$date": "2023-05-05T07:19:27.775Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-05T07:19:27.775Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6456a58507e422671045c47f"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "sita",
+  "lastname": "rao",
+  "email": "see@gmail.com",
+  "encry_password": "654645",
+  "createdAt": {
+    "$date": "2023-05-06T19:07:50.006Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-06T19:07:50.006Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6456a6098e5bdd41906794c6"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "hensi",
+  "lastname": "rao",
+  "email": "raa@gmail.com",
+  "encry_password": "6645",
+  "createdAt": {
+    "$date": "2023-05-06T19:10:01.314Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-06T19:10:01.314Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463c7e2cb441c2a6c53041c"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "sen",
+  "email": "dev@gmail.com",
+  "encry_password": "123321",
+  "createdAt": {
+    "$date": "2023-05-16T18:13:54.029Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-16T18:13:54.029Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6465b44160801926e05d96ea"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "jayesh",
+  "email": "jay@gmail.com",
+  "encry_password": "90000",
+  "createdAt": {
+    "$date": "2023-05-18T05:14:41.067Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-18T05:14:41.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64672684a8ad143c3833e772"
+  },
+  "role": 0,
+  "purchase": [],
+  "name": "gautam",
+  "email": "gautam@gmail.com",
+  "encry_password": "1234",
+  "createdAt": {
+    "$date": "2023-05-19T07:34:28.232Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-19T07:34:28.232Z"
+  },
+  "__v": 0
+}]
